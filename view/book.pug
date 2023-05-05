@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title data Catalog
+    body
+        h1 #{data.title}
+        form(action="/newbookform" method="GET")
+            input(type="submit" value="Add New Book")
+        form(action="/catalog" method="GET")
+            input(type="submit" value="Back to catalog")
+        form(action="/book" method="GET")
+            label(for="search") Search by ID:
+            input(type="text" name="id" id="search")
+            input(type="submit" value="Search")
+        table
+            tr
+                th ID
+                th Title
+                th Author
+                th Year of Publish
+                th Page Number
+                th Synopsis
+                th Genre
+                th Type
+                th Cover
+            tr
+                td #{data.id}
+                td #{data.title}
+                td #{data.author}
+                td #{data.year_of_publish}
+                td #{data.page_number}
+                td #{data.synopsis}
+                td #{data.genre}
+                td #{data.type}
+                td
+                    img(src= `#{data.cover}`)
